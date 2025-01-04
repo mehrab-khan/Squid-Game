@@ -124,11 +124,12 @@ def stone_paper_scissors(player_name):
         if player_score > bot_score:
             print(f"Player {player_name} : Win")
         elif player_score == bot_score:
-            print("Tie try once")
+            print(Fore.YELLOW + "Tie try it again")
+            print(Fore.RESET)
             stone_paper_scissors(f'( {user_name} ) Player No. {main_player}')
         else:
             print("Bot Wins")
-            print(Fore.RED + f"{main_player} ( {user_name} ) lost you are eliminated ")
+            print(Fore.RED + f"Player : {main_player} ( {user_name} ) lost you are eliminated ")
             print(Fore.RESET)
             game_continue = False
             quit()
@@ -159,7 +160,7 @@ for i in range(1,51):
  
 print(f"Total Alive Player's {len(players)}")
 print(f'Player\'s : {players}')
-print("Are you Entering the game ? ")
+print("Are you sure for entering the game ? ")
 user_opinion = input("Enter 'y' for YES or Enter 'n' for NO\nEnter : ")
 if user_opinion == 'n' or user_opinion == 'N':
      print("Thanks for playing")
@@ -172,6 +173,16 @@ while game_continue:
     stone_paper_scissors(f'( {user_name} ) Player No. {main_player}')
     time.sleep(1)
     print(f"Congratualations {user_name} You have done your first game")
+    # time.sleep(1)
+    # def remove_player(index):
+    #     try:
+    #         players.pop(random.randint(1,index -1))
+    #         print("Existing Players : ",players)
+    #     except:
+    #         print("No player exits")
+
+    # for i in range(random.randint(1,8)):
+    #     remove_player(len(players))
     time.sleep(4)
     print('---------------')
     print("Next Game is Red Room")
